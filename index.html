@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pyprogro | Преподаватель программирования</title>
-    <!-- Подключение Bulma CSS фреймворка через CDN -->
+    <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <!-- Подключение Font Awesome для иконок соцсетей и стрелок -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- Пользовательские стили (небольшие корректировки) -->
+    <!-- Пользовательские стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,22 +16,25 @@
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <!-- Логотип / имя преподавателя -->
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="index.html">
                 <strong>Pyprogro</strong>
             </a>
-            <!-- Бургер-меню для мобильных устройств (скрыто на десктопе) -->
+            <!-- Бургер-меню для мобильных устройств -->
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <!-- Меню навигации (якорные ссылки на разделы) -->
+        <!-- Меню навигации -->
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
+                <!-- Якорные ссылки на разделы главной страницы -->
                 <a class="navbar-item" href="#about">Обо мне</a>
                 <a class="navbar-item" href="#services">Услуги</a>
-                <a class="navbar-item" href="#contact">Контакты</a>
+                <!-- Ссылки на отдельные страницы -->
+                <a class="navbar-item" href="contacts.html">Контакты</a>
+                <a class="navbar-item" href="faq.html">FAQ</a>
             </div>
         </div>
     </nav>
@@ -42,8 +45,8 @@
             <div class="container has-text-centered">
                 <h1 class="title is-1">Обучаю программированию с нуля</h1>
                 <h2 class="subtitle is-4">Индивидуальные и групповые занятия по frontend, JavaScript, React</h2>
-                <!-- Кнопка призыва к действию (CTA) ведёт к форме контактов -->
-                <a href="#contact" class="button is-large is-light">
+                <!-- Кнопка призыва ведёт на страницу контактов -->
+                <a href="contacts.html" class="button is-large is-light">
                     <span>Записаться на пробный урок</span>
                     <span class="icon"><i class="fas fa-arrow-right"></i></span>
                 </a>
@@ -61,7 +64,7 @@
                     <p class="subtitle is-5">Преподаю программирование более 5 лет</p>
                     <p>Работал frontend-разработчиком в крупных IT-компаниях, участвовал в коммерческих проектах. Веду блог и помогаю новичкам войти в IT. Мои ученики успешно проходят собеседования и работают в стартапах и корпорациях.</p>
                 </div>
-                <!-- Колонка с фото (круглая форма) -->
+                <!-- Колонка с фото -->
                 <div class="column is-6 has-text-centered">
                     <figure class="image is-256x256 is-inline-block">
                         <img class="is-rounded" src="assets/images/teacher-photo.jpg" alt="Фото преподавателя">
@@ -71,7 +74,7 @@
         </div>
     </section>
 
-    <!-- ========== СЕКЦИЯ "УСЛУГИ / КУРСЫ" (СЕТКА КАРТОЧЕК) ========== -->
+    <!-- ========== СЕКЦИЯ "УСЛУГИ / КУРСЫ" ========== -->
     <section id="services" class="section">
         <div class="container">
             <h2 class="title is-2 has-text-centered">Чем я могу помочь</h2>
@@ -82,7 +85,7 @@
                         <div class="card-content">
                             <h3 class="title is-4">Основы HTML/CSS</h3>
                             <p>Создание адаптивных сайтов, работа с Flexbox и Grid, базовая верстка.</p>
-                            <a href="#contact" class="button is-text">Подробнее →</a>
+                            <a href="contacts.html" class="button is-text">Подробнее →</a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +95,7 @@
                         <div class="card-content">
                             <h3 class="title is-4">JavaScript для начинающих</h3>
                             <p>Основы языка, DOM, события, асинхронность, первые проекты.</p>
-                            <a href="#contact" class="button is-text">Подробнее →</a>
+                            <a href="contacts.html" class="button is-text">Подробнее →</a>
                         </div>
                     </div>
                 </div>
@@ -102,58 +105,8 @@
                         <div class="card-content">
                             <h3 class="title is-4">Подготовка к собеседованию</h3>
                             <p>Разбор алгоритмов, типичных вопросов, помощь с резюме и портфолио.</p>
-                            <a href="#contact" class="button is-text">Подробнее →</a>
+                            <a href="contacts.html" class="button is-text">Подробнее →</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== СЕКЦИЯ "КОНТАКТЫ И ФОРМА СВЯЗИ" ========== -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="title is-2 has-text-centered">Свяжитесь со мной</h2>
-            <div class="columns">
-                <!-- Левая колонка: форма обратной связи -->
-                <div class="column is-6">
-                    <form action="#" method="post">
-                        <div class="field">
-                            <label class="label">Ваше имя</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Алексей">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="alex@example.com">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Сообщение</label>
-                            <div class="control">
-                                <textarea class="textarea" placeholder="Опишите ваш вопрос..."></textarea>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary is-fullwidth">Отправить</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- Правая колонка: контактная информация и соцсети -->
-                <div class="column is-6">
-                    <div class="content">
-                        <p><strong>Email:</strong> pyprogro@example.com</p>
-                        <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-                        <p><strong>Социальные сети:</strong></p>
-                        <p>
-                            <a href="#" class="icon is-large"><i class="fab fa-telegram fa-2x"></i></a>
-                            <a href="#" class="icon is-large"><i class="fab fa-youtube fa-2x"></i></a>
-                            <a href="#" class="icon is-large"><i class="fab fa-github fa-2x"></i></a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -172,7 +125,7 @@
         </div>
     </footer>
 
-    <!-- Небольшой скрипт для активации бургер-меню (требуется для Bulma) -->
+    <!-- Скрипт для активации бургер-меню -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Находим все элементы с классом navbar-burger
