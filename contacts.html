@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ХЕДЕР (скопирован с index.html, но с активным пунктом "Контакты") -->
+    <!-- Хедер (навигация) -->
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.html">
@@ -28,90 +28,98 @@
             <div class="navbar-end">
                 <a class="navbar-item" href="index.html#about">Обо мне</a>
                 <a class="navbar-item" href="index.html#services">Услуги</a>
-                <a class="navbar-item" href="contacts.html" class="is-active">Контакты</a>
+                <a class="navbar-item is-active" href="contacts.html">Контакты</a>
                 <a class="navbar-item" href="faq.html">FAQ</a>
             </div>
         </div>
     </nav>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <!-- Основной контент -->
     <section class="section">
         <div class="container">
             <h1 class="title is-2 has-text-centered">Свяжитесь со мной</h1>
-            <div class="columns">
-                <!-- Левая колонка: форма обратной связи -->
-                <div class="column is-6">
-                    <form id="contactForm">
-                        <!-- Поле Имя -->
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <!-- Форма обратной связи -->
+                    <form id="feedbackForm">
+                        <!-- Поле ФИО -->
                         <div class="field">
-                            <label class="label">Имя</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Ваше имя" required>
+                            <label class="label">ФИО <span class="has-text-danger">*</span></label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="text" id="fullname" placeholder="Иванов Иван Иванович">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
                             </div>
+                            <p class="help" id="fullnameHelp">Введите фамилию, имя и отчество</p>
                         </div>
+
+                        <!-- Поле Телефон -->
+                        <div class="field">
+                            <label class="label">Телефон <span class="has-text-danger">*</span></label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="tel" id="phone" placeholder="+7 (999) 123-45-67">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-phone"></i>
+                                </span>
+                            </div>
+                            <p class="help" id="phoneHelp">Формат: +7 (ХХХ) ХХ-ХХ-ХХ</p>
+                        </div>
+
                         <!-- Поле Email -->
                         <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="example@email.com" required>
+                            <label class="label">Email <span class="has-text-danger">*</span></label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="email" id="email" placeholder="example@mail.ru">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
                             </div>
+                            <p class="help" id="emailHelp">Введите корректный email адрес</p>
                         </div>
-                        <!-- Выпадающий список "Тема" -->
-                        <div class="field">
-                            <label class="label">Тема</label>
-                            <div class="control">
-                                <div class="select is-fullwidth">
-                                    <select required>
-                                        <option value="" disabled selected>Выберите тему</option>
-                                        <option>Предложение</option>
-                                        <option>Вопрос по курсу</option>
-                                        <option>Сотрудничество</option>
-                                        <option>Другое</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- Поле Сообщение (textarea) -->
                         <div class="field">
                             <label class="label">Сообщение</label>
                             <div class="control">
-                                <textarea class="textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                                <textarea class="textarea" id="message" placeholder="Текст сообщения..."></textarea>
                             </div>
+                            <p class="help" id="messageHelp">До 500 символов</p>
                         </div>
+
                         <!-- Чекбокс согласия -->
                         <div class="field">
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox" required>
-                                    Соглашаюсь на обработку персональных данных
+                                    <input type="checkbox" id="agreement">
+                                    Я согласен на обработку персональных данных
                                 </label>
                             </div>
                         </div>
-                        <!-- Кнопка отправки -->
-                        <div class="field">
+
+                        <!-- Кнопки отправки и очистки -->
+                        <div class="field is-grouped is-grouped-centered">
                             <div class="control">
-                                <button class="button is-primary" type="submit">Отправить сообщение</button>
+                                <button type="submit" class="button is-primary">
+                                    <span class="icon">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </span>
+                                    <span>Отправить</span>
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button type="reset" class="button is-light">
+                                    <span>Очистить</span>
+                                </button>
                             </div>
                         </div>
                     </form>
-                </div>
-                <!-- Правая колонка: контактная информация и карта -->
-                <div class="column is-6">
-                    <div class="content">
-                        <h3 class="title is-4">Контактная информация</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Программистов, 42</p>
-                        <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
-                        <p><i class="fas fa-envelope"></i> pyprogro@example.com</p>
-                        <p><i class="fab fa-telegram"></i> @pyprogro_teacher</p>
-                    </div>
-                    <!-- Пример вставки карты (Яндекс.Карты) -->
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1234567890abcdef" width="100%" height="300" style="border:0; margin-top: 2rem;"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ФУТЕР (скопирован с index.html) -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
@@ -123,7 +131,11 @@
         </div>
     </footer>
 
-    <!-- Скрипт для бургер-меню (такой же как на главной) -->
+    <!-- Подключение скриптов валидации -->
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/consoleLogger.js"></script>
+
+    <!-- Скрипт бургер-меню (оставляем) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
