@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Страница не найдена | Pyprogro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .error-page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер (можно убрать, чтобы не сбивать с толку, но оставим для единообразия) -->
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <strong>Pyprogro</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html#about">Обо мне</a>
+                <a class="navbar-item" href="index.html#services">Услуги</a>
+                <a class="navbar-item" href="contacts.html">Контакты</a>
+                <a class="navbar-item" href="faq.html">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="error-page">
+        <div class="container">
+            <h1 class="title is-1" style="font-size: 8rem; color: #3273dc;">404</h1>
+            <h2 class="title is-3">Ой! Страница не найдена</h2>
+            <p class="subtitle is-5" style="max-width: 600px; margin: 1rem auto;">
+                Возможно, эта страница была удалена или перемещена. Попробуйте вернуться на главную или воспользуйтесь навигацией.
+            </p>
+            <div class="buttons is-centered">
+                <a href="index.html" class="button is-primary is-medium">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span>На главную</span>
+                </a>
+                <a href="contacts.html" class="button is-light is-medium">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <span>Связаться</span>
+                </a>
+            </div>
+            <div class="mt-6">
+                <p class="has-text-grey">Или перейдите в разделы:</p>
+                <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="index.html#about">Обо мне</a></li>
+                        <li><a href="index.html#services">Услуги</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер (опционально) -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2026 Pyprogro. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Бургер-меню
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
