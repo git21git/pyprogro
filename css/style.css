@@ -32,3 +32,8 @@
     background-size: cover;
     background-position: center;
 }
+
+.hero {
+    background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../assets/images/hero-bg.jpg');
+    background-size: cover;
+}
