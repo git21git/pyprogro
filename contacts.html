@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyprogro | Контакты</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Пользовательские стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ХЕДЕР (скопирован с index.html, но с активным пунктом "Контакты") -->
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <strong>Pyprogro</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html#about">Обо мне</a>
+                <a class="navbar-item" href="index.html#services">Услуги</a>
+                <a class="navbar-item" href="contacts.html" class="is-active">Контакты</a>
+                <a class="navbar-item" href="faq.html">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-2 has-text-centered">Свяжитесь со мной</h1>
+            <div class="columns">
+                <!-- Левая колонка: форма обратной связи -->
+                <div class="column is-6">
+                    <form id="contactForm">
+                        <!-- Поле Имя -->
+                        <div class="field">
+                            <label class="label">Имя</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ваше имя" required>
+                            </div>
+                        </div>
+                        <!-- Поле Email -->
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+                        <!-- Выпадающий список "Тема" -->
+                        <div class="field">
+                            <label class="label">Тема</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select required>
+                                        <option value="" disabled selected>Выберите тему</option>
+                                        <option>Предложение</option>
+                                        <option>Вопрос по курсу</option>
+                                        <option>Сотрудничество</option>
+                                        <option>Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Поле Сообщение (textarea) -->
+                        <div class="field">
+                            <label class="label">Сообщение</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <!-- Чекбокс согласия -->
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" required>
+                                    Соглашаюсь на обработку персональных данных
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Кнопка отправки -->
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Отправить сообщение</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Правая колонка: контактная информация и карта -->
+                <div class="column is-6">
+                    <div class="content">
+                        <h3 class="title is-4">Контактная информация</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Программистов, 42</p>
+                        <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> pyprogro@example.com</p>
+                        <p><i class="fab fa-telegram"></i> @pyprogro_teacher</p>
+                    </div>
+                    <!-- Пример вставки карты (Яндекс.Карты) -->
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1234567890abcdef" width="100%" height="300" style="border:0; margin-top: 2rem;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР (скопирован с index.html) -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <a href="#"><span class="icon"><i class="fab fa-telegram"></i></span></a>
+                <a href="#"><span class="icon"><i class="fab fa-youtube"></i></span></a>
+                <a href="#"><span class="icon"><i class="fab fa-github"></i></span></a>
+            </p>
+            <p>© 2026 Pyprogro. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипт для бургер-меню (такой же как на главной) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
